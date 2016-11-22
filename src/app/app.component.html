@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span>TampereJS Dec 2016 -- Angular2 Router Demo</span>
+  <button md-icon-button [md-menu-trigger-for]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+</md-toolbar>
+
+<md-menu x-position="before" #menu="mdMenu">
+  <a md-menu-item href="https://github.com/zhentian-wan/tamperejs-ng2router-demo" target="_blank">Github</a>
+  <a md-menu-item href="https://twitter.com/Zhentiw" target="_blank">Twitter</a>
+</md-menu>
+
+<md-sidenav-layout>
+  <md-sidenav align="start" mode="side" opened>
+    <app-sidenav></app-sidenav>
+  </md-sidenav>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-layout>

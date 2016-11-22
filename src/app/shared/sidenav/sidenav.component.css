@@ -1,0 +1,13 @@
+md-icon {
+  padding: 0 8px;
+}
+
+a.active{
+  font-weight: bold;
+  color: indigo;
+}
+
+.sub-title {
+  color: lightgray;
+  font-size: 0.9em;
+}

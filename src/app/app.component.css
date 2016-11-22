@@ -1,0 +1,11 @@
+md-sidenav{
+  width: 250px;
+}
+
+.main-content{
+  padding: 10px;
+}
+
+md-icon {
+  color: white;
+}
