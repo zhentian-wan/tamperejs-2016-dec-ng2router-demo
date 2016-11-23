@@ -5,6 +5,7 @@ const indexRoute = {path: '', redirectTo: 'home', pathMatch: 'full'};
 const fallbackRoute = {path: '**', component: E404Component};
 
 const routes = [
+  {path: 'index', redirectTo: '/home', pathMatch: 'prefix'},
   {path: 'home', component: HomeComponent},
   indexRoute,
   fallbackRoute

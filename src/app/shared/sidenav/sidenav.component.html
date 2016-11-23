@@ -1,9 +1,26 @@
 <md-list>
+  <h3 md-subheader>
+    Basic
+  </h3>
   <md-list-item>
     <md-icon>
       dashboard
     </md-icon>
-    <a [routerLink]="['/home']" routerLinkActive="active">Basic</a>
+    <a [routerLink]="['/home']" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}">Child Route</a>
+  </md-list-item>
+  <md-list-item>
+    <md-icon>
+      info_outline
+    </md-icon>
+    <a [routerLink]="['/index']" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}">Redirect Route</a>
+  </md-list-item>
+  <md-list-item>
+    <md-icon>
+      highlight_off
+    </md-icon>
+    <a [routerLink]="['/randompath']" routerLinkActive="active">Fallback Route</a>
   </md-list-item>
   <md-divider></md-divider>
 
@@ -27,7 +44,7 @@
 
 
   <h3 md-subheader>
-      Guards
+    Guards
   </h3>
   <md-list-item>
     <md-icon>

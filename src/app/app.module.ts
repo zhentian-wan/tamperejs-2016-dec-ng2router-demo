@@ -11,6 +11,11 @@ import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import appRouts from './app.routes';
 import { E404Component } from './shared/e404/e404.component';
 import { HomeComponent } from './home/home.component';
+import {SharedServiceModule} from "./service/index";
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PokemonCardComponent } from './pokemon-list/pokemon-card/pokemon-card.component';
+import {CapitalizePipe} from "./shared/pipes/capitalizePipes";
 
 
 @NgModule({
@@ -18,12 +23,17 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     SidenavComponent,
     E404Component,
-    HomeComponent
+    HomeComponent,
+    PokemonListComponent,
+    PokemonDetailComponent,
+    PokemonCardComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SharedServiceModule.forRoot(),
     MaterialModule.forRoot(),
     appRouts
   ],
