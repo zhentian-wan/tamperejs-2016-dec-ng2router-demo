@@ -32,6 +32,15 @@ a {
   text-decoration: none;
 }
 
+.aux{
+  position: absolute;;
+  top: 60px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  background: lightgoldenrodyellow;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
