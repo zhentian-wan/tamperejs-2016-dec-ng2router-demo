@@ -7,10 +7,6 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-md-sidenav-layout {
-  height: 100vh;
-}
-
 md-sidenav {
   width: 250px;
 }
@@ -27,18 +23,12 @@ md-grid-tile figure{
   margin: 2px;
 }
 
+md-sidenav-layout {
+   height: calc(100vh - 65px);
+}
 
 a {
   text-decoration: none;
-}
-
-.aux{
-  position: absolute;;
-  top: 60px;
-  right: 10px;
-  width: 200px;
-  height: 200px;
-  background: lightgoldenrodyellow;
 }
 
 * {

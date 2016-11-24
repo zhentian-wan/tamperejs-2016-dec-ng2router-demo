@@ -1,10 +1,11 @@
-import {Component, OnInit, Inject} from '@angular/core';
+import {Component, OnInit, Inject, ViewEncapsulation} from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-preview',
   templateUrl: './preview.component.html',
-  styleUrls: ['./preview.component.css']
+  styleUrls: ['./preview.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class PreviewComponent implements OnInit {
 
