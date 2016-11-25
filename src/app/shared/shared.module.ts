@@ -6,10 +6,12 @@ import {PokemonListComponent} from "./pokemon-list/pokemon-list.component";
 import {PokemonDetailComponent} from "./pokemon-detail/pokemon-detail.component";
 import {PokemonCardComponent} from "./pokemon-list/pokemon-card/pokemon-card.component";
 import {CapitalizePipe} from "./pipes/capitalizePipes";
+import {RouterModule} from "../../../node_modules/@angular/router/src/router_module";
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   declarations: [
     PokemonListComponent,
@@ -19,6 +21,7 @@ import {CapitalizePipe} from "./pipes/capitalizePipes";
   ],
   exports: [
     CommonModule,
+    RouterModule,
     MaterialModule,
     PokemonListComponent,
     PokemonDetailComponent,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-preview-detail',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewDetailComponent implements OnInit {
 
-  constructor() { }
+  id;
+  constructor(private route: ActivatedRoute) {
+    route.params
+      .map(p => p['id'])
+      .subscribe((id) => {
+        this.id = id;
+      });
+  }
 
   ngOnInit() {
   }

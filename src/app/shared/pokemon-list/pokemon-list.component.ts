@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,10 +8,26 @@ import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 export class PokemonListComponent implements OnInit {
 
   @Input('pokemons') pokemons;
+  @Input('cols') cols;
+  @Input('preview-mode') previewMode;
+  @Output('preview-pokemon') previewPokemon = new EventEmitter();
+
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  get pokemon() {
+    return this.previewPokemon;
+  }
+
+  setPreviewPokemon(pokemon) {
+    this.previewPokemon.emit(pokemon);
+  }
+
+  clearPreviewPokemon() {
+    this.previewPokemon = null;
   }
 
 }

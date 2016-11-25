@@ -1,4 +1,5 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -8,9 +9,22 @@ import {Component, OnInit, Input} from '@angular/core';
 export class PokemonCardComponent implements OnInit {
 
   @Input('pokemon') pokemon;
-  constructor() { }
+  @Input('enable-preview') enablePreview;
+  @Output() show = new EventEmitter();
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
+
+  navToDetail(id){
+    this.router.navigate([id], {relativeTo: this.route})
+  }
+
+  showPokemonDetail(pokemon) {
+
+    this.show.emit(pokemon)
+
+  }
 }

@@ -13,13 +13,4 @@ export class PreviewComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  openPreview(event) {
-    this.router.navigateByUrl(`/preview/(preview//aux:aux)`);
-  }
-
-  closePreview(event) {
-    event.preventDefault();
-    this.router.navigate([{outlets: {primary: 'preview', aux: null}}], {relativeTo: this.route});
-  }
 }
