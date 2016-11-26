@@ -9,37 +9,6 @@
     <a [routerLink]="['/home']" routerLinkActive="active"
        [routerLinkActiveOptions]="{exact: true}">Child Route</a>
   </md-list-item>
-  <md-list-item>
-    <md-icon>
-      info_outline
-    </md-icon>
-    <a [routerLink]="['/index']" routerLinkActive="active"
-       [routerLinkActiveOptions]="{exact: true}">Redirect Route</a>
-  </md-list-item>
-  <md-list-item>
-    <md-icon>
-      highlight_off
-    </md-icon>
-    <a [routerLink]="['/randompath']" routerLinkActive="active">Fallback Route</a>
-  </md-list-item>
-  <md-divider></md-divider>
-
-
-  <h3 md-subheader>
-    Lazy Loading
-  </h3>
-  <md-list-item>
-    <md-icon>
-      history
-    </md-icon>
-    <a>Lazy Load Module</a>
-  </md-list-item>
-  <md-list-item>
-    <md-icon>
-      explore
-    </md-icon>
-    <a>Preload Lazy load Module</a>
-  </md-list-item>
   <md-divider></md-divider>
 
 
@@ -54,9 +23,15 @@
   </md-list-item>
   <md-list-item>
     <md-icon>
-      exit_to_app
+      explore
     </md-icon>
     <a>canDeactivate</a>
+  </md-list-item>
+  <md-list-item>
+    <md-icon>
+      exit_to_app
+    </md-icon>
+    <a>canLoad</a>
   </md-list-item>
   <md-divider></md-divider>
 
@@ -74,6 +49,6 @@
     <md-icon>
       info
     </md-icon>
-    <a [routerLink]="['/preview']" routerLinkActive="active">Aux</a>
+    <a [routerLink]="['/preview']" routerLinkActive="active">Auxiliary router</a>
   </md-list-item>
 </md-list>
