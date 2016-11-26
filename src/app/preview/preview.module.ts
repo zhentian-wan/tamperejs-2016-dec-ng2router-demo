@@ -4,7 +4,6 @@ import {PreviewComponent} from "./preview.component";
 import {PreviewDetailComponent} from "./preview-detail/preview-detail.component";
 import {PreviewLeftComponent} from "./preview-left/preview-left.component";
 import SharedModule from "../shared/shared.module";
-import {PreviewTestComponent} from "./preview-test/preview-test.component";
 
 @NgModule({
   imports: [
@@ -14,8 +13,7 @@ import {PreviewTestComponent} from "./preview-test/preview-test.component";
   declarations: [
     PreviewComponent,
     PreviewDetailComponent,
-    PreviewLeftComponent,
-    PreviewTestComponent
+    PreviewLeftComponent
   ]
 })
 export default class PreviewModule {

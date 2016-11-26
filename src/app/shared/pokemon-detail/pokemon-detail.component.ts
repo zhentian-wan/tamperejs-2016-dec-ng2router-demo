@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import {POKE_SERVICE} from "../../service/index";
 import {Router, ActivatedRoute} from "@angular/router";
 
@@ -11,12 +11,12 @@ export class PokemonDetailComponent implements OnInit {
 
   id;
   pokemon;
+  @Input('pokemon') data;
   constructor(private route: ActivatedRoute, @Inject(POKE_SERVICE) private pokeDataService) {
     this.route.params
       .map(p => p['id'])
       .subscribe((id) => {
         this.id = id;
-        console.log("pokeDataService", JSON.stringify(pokeDataService, null, 2))
         this.pokemon = pokeDataService
           .filter(p => Number(p.id) === Number(id))[0];
       });
@@ -24,6 +24,8 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.data) {
+      this.pokemon = this.data;
+    }
   }
-
 }

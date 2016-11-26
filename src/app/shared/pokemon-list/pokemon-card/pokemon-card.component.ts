@@ -23,8 +23,6 @@ export class PokemonCardComponent implements OnInit {
   }
 
   showPokemonDetail(pokemon) {
-
     this.show.emit(pokemon)
-
   }
 }

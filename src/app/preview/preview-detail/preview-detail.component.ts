@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
+import { Component, OnInit, Inject } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import 'rxjs/add/operator/map';
+import {POKE_SERVICE} from "../../service/index";
 
 @Component({
   selector: 'app-preview-detail',
@@ -10,15 +11,19 @@ import 'rxjs/add/operator/map';
 export class PreviewDetailComponent implements OnInit {
 
   id;
-  constructor(private route: ActivatedRoute) {
+  pokemon;
+  constructor(private route: ActivatedRoute,
+              @Inject(POKE_SERVICE) private pokemonDataService
+  ) {
     route.params
-      .map(p => p['id'])
+      .map((p) => p['id'])
       .subscribe((id) => {
         this.id = id;
       });
   }
 
   ngOnInit() {
+    this.pokemon = this.pokemonDataService
+      .filter(p => p.id === this.id)[0];
   }
-
 }

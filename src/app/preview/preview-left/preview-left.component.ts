@@ -1,6 +1,12 @@
-import {Component, OnInit, Input, Inject, ViewChild} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {POKE_SERVICE} from "../../service/index";
 import {Router, ActivatedRoute} from "@angular/router";
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/filter";
+import "rxjs/add/operator/distinctUntilChanged";
+import {Subject} from "rxjs/Subject";
 
 @Component({
   selector: 'app-preview-left',
@@ -9,15 +15,21 @@ import {Router, ActivatedRoute} from "@angular/router";
 })
 export class PreviewLeftComponent implements OnInit {
 
+  setPokemon$ = new Subject();
+
   constructor(@Inject(POKE_SERVICE) private pokemonDataService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-
-  }
-
-  setPreviewPokemon(pokemon){
-    const path = pokemon.id.toString();
-    this.router.navigate([{outlets: {aux: path}}], {relativeTo: this.route});
+    this.setPokemon$
+      .debounceTime(300)
+      .map((pokemon) => pokemon && pokemon['id'].toString())
+      .filter((id) => !!id)
+      .distinctUntilChanged()
+      .subscribe(
+        (id) => {
+          this.router.navigate([{outlets: {aux: id}}], {relativeTo: this.route});
+        }
+      )
   }
 }

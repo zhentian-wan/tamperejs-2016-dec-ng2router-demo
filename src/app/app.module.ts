@@ -11,7 +11,6 @@ import {SidenavComponent} from './shared/sidenav/sidenav.component';
 import appRouts from './app.routes';
 import {E404Component} from './shared/e404/e404.component';
 import {SharedServiceModule} from "./service/index";
-import { PreviewTestComponent } from './preview/preview-test/preview-test.component';
 import {PreviewLeftComponent} from "./preview/preview-left/preview-left.component";
 import {PreviewDetailComponent} from "./preview/preview-detail/preview-detail.component";
 import {PreviewComponent} from "./preview/preview.component";
@@ -25,8 +24,7 @@ import SharedModule from "./shared/shared.module";
     E404Component,
     PreviewComponent,
     PreviewDetailComponent,
-    PreviewLeftComponent,
-    PreviewTestComponent
+    PreviewLeftComponent
   ],
   imports: [
     BrowserModule,
