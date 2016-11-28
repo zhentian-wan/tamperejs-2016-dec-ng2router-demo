@@ -1,6 +1,7 @@
 
 import {NgModule, OpaqueToken} from "@angular/core";
 import {pokemonData} from "../shared/data";
+import ComponentCanActivate from "../shared/guards/CanActivate.guard";
 
 const POKE_SERVICE = new OpaqueToken('poke_service');
 
@@ -10,7 +11,8 @@ export class SharedServiceModule {
     return {
       ngModule: SharedServiceModule,
       providers: [
-        {provide: POKE_SERVICE, useValue: pokemonData}
+        {provide: POKE_SERVICE, useValue: pokemonData},
+        ComponentCanActivate
       ]
     }
   }

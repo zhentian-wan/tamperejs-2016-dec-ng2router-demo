@@ -1,1 +1,4 @@
+<md-slide-toggle [(ngModel)]="toggle" (change)="toggleAuth($event)">
+  Can Activate Component: <b>{{auth.isAuth}}</b>
+</md-slide-toggle>
 <router-outlet></router-outlet>
