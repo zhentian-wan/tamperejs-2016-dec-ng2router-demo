@@ -15,6 +15,7 @@ import {PreviewLeftComponent} from "./preview/preview-left/preview-left.componen
 import {PreviewDetailComponent} from "./preview/preview-detail/preview-detail.component";
 import {PreviewComponent} from "./preview/preview.component";
 import SharedModule from "./shared/shared.module";
+import { ResolverComponent } from './resolver/resolver.component';
 
 
 @NgModule({

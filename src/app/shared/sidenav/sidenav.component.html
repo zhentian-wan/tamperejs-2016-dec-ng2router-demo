@@ -19,19 +19,19 @@
     <md-icon>
       lock
     </md-icon>
-    <a>canActivate</a>
-  </md-list-item>
-  <md-list-item>
-    <md-icon>
-      explore
-    </md-icon>
-    <a>canDeactivate</a>
+    <a [routerLink]="['/guards']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">canActivate</a>
   </md-list-item>
   <md-list-item>
     <md-icon>
       exit_to_app
     </md-icon>
-    <a>canLoad</a>
+    <a [routerLink]="['/guards','can-deactivated']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">canDeactivate</a>
+  </md-list-item>
+  <md-list-item>
+    <md-icon>
+      explore
+    </md-icon>
+    <a [routerLink]="['/guards','can-load']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">canLoad</a>
   </md-list-item>
   <md-divider></md-divider>
 
@@ -40,7 +40,7 @@
     <md-icon>
       store
     </md-icon>
-    <a>Resolver</a>
+    <a [routerLink]="['/resolver']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Resolver</a>
   </md-list-item>
   <md-divider></md-divider>
 

@@ -12,7 +12,9 @@ export class PokemonDetailComponent implements OnInit {
   id;
   pokemon;
   @Input('pokemon') data;
-  constructor(private route: ActivatedRoute, @Inject(POKE_SERVICE) private pokeDataService) {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              @Inject(POKE_SERVICE) private pokeDataService) {
     this.route.params
       .map(p => p['id'])
       .subscribe((id) => {
@@ -27,5 +29,9 @@ export class PokemonDetailComponent implements OnInit {
     if(this.data) {
       this.pokemon = this.data;
     }
+  }
+
+  back() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 }
