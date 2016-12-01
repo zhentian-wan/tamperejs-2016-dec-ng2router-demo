@@ -1,3 +1,3 @@
-<p>
-  can-deactivated works!
-</p>
+<h2>Is editing: {{editing}}</h2>
+<md-input type="text" #inputRef (keydown)="typing$.next(inputRef.value)" placeholder="Type something"></md-input>
+<button md-button color="accent" (click)="save()">Save</button>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import AuthService from "../service/auth/auth.service";
 
 @Component({
   selector: 'app-guards',
@@ -8,16 +7,10 @@ import AuthService from "../service/auth/auth.service";
 })
 export class GuardsComponent implements OnInit {
 
-  toggle: boolean;
-  constructor(private auth: AuthService) {
-    this.toggle = this.auth.isAuth;
+  constructor() {
   }
 
   ngOnInit() {
-  }
 
-  toggleAuth(e: boolean){
-    this.auth.setAuth(e['checked']);
   }
-
 }

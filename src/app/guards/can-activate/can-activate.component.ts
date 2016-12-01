@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import AuthService from "../../service/auth/auth.service";
 
 @Component({
   selector: 'app-can-activate',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./can-activate.component.css']
 })
 export class CanActivateComponent implements OnInit {
-
-  constructor() { }
+  canActive: boolean;
+  constructor(private auth: AuthService) {
+    this.canActive = this.auth.isAuth;
+  }
 
   ngOnInit() {
+
+  }
+
+  toggleAuth(e: boolean){
+    this.auth.setAuth(e['checked']);
   }
 
 }

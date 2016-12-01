@@ -1,4 +1,4 @@
-import {RouterModule} from "@angular/router";
+import {RouterModule, PreloadAllModules} from "@angular/router";
 import {E404Component} from "./shared/e404/e404.component";
 import {PreviewComponent} from "./preview/preview.component";
 import {PreviewLeftComponent} from "./preview/preview-left/preview-left.component";
@@ -11,8 +11,8 @@ const routes = [
   {path: 'home', loadChildren: 'app/home/home.module', data: {title: 'Pokemon List'}},
   {path: 'guards', loadChildren: 'app/guards/guards.module', data: {title: 'Router Guards'}},
   {path: 'resolver', loadChildren: 'app/resolver/resolver.module', data: {title: 'Data Resolver'}},
- // {path: 'preview', loadChildren: 'app/preview/preview.module', data: {title: 'Preview Pokemon'}},
-  { path: 'preview',
+  {
+    path: 'preview',
     component: PreviewComponent,
     children: [
       {
@@ -29,12 +29,13 @@ const routes = [
         component: PreviewDetailComponent,
         outlet: 'aux'
       }
-    ]},
+    ]
+  },
   indexRoute,
   fallbackRoute
 ];
 
 export default RouterModule.forRoot(routes, {
- // enableTracing: true
+  preloadingStrategy: PreloadAllModules
 });
 
