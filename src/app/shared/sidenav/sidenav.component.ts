@@ -12,9 +12,4 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  nav(event, path) {
-    event.preventDefault();
-    this.router.navigate([{outlets: {primary: 'preview', aux: 'aux'}}])
-  }
 }

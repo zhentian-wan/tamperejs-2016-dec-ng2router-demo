@@ -13,6 +13,8 @@ import {Title} from "@angular/platform-browser";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
+
+  curtPath: string;
   constructor(private router: Router, private route: ActivatedRoute, private titleService: Title) {
     router.events
       .let(obs => this.titleObservable(obs))
@@ -20,7 +22,7 @@ export class AppComponent {
         (event) => {
           this.titleService.setTitle(event['title'])
         }
-      )
+      );
   }
 
   titleObservable(obs) {
@@ -33,7 +35,13 @@ export class AppComponent {
           return route;
         }
       })
+      .do(r => this.getActivatedRoutePath(r))
       .filter(route => route.outlet === 'primary')
       .mergeMap(route => route.data);
+  }
+
+  getActivatedRoutePath(r) {
+    return r.url
+      .subscribe(p => this.curtPath = p[0].path)
   }
 }

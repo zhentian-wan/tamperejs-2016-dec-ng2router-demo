@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/startWith';
 import {POKE_SERVICE} from "../../service/index";
 
 @Component({
@@ -17,7 +18,9 @@ export class PreviewDetailComponent implements OnInit {
   ) {
     route.params
       .map((p) => p['id'])
+      .startWith(1)
       .subscribe((id) => {
+      console.log("id", id);
         this.id = id;
       });
   }

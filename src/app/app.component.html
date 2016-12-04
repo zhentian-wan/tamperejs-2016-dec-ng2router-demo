@@ -17,5 +17,8 @@
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
+  <md-sidenav align="end" mode="side" [opened]="curtPath === 'preview'">
+    <router-outlet name="aux"></router-outlet>
+  </md-sidenav>
 </md-sidenav-layout>
 
