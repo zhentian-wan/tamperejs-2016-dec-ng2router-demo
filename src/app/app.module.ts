@@ -17,6 +17,7 @@ import {PreviewComponent} from "./preview/preview.component";
 import SharedModule from "./shared/shared.module";
 import AuthService from "./service/auth/auth.service";
 import {MdSnackBar} from "../../node_modules/@angular/material/snack-bar/snack-bar";
+import {PreloadSelectedModuledsList} from "./shared/custom-preload";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MdSnackBar} from "../../node_modules/@angular/material/snack-bar/snack-b
   ],
   providers: [
     AuthService,
-    MdSnackBar
+    MdSnackBar,
+    PreloadSelectedModuledsList
   ],
   bootstrap: [AppComponent]
 })

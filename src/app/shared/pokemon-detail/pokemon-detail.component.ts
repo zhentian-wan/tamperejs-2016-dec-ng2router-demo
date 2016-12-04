@@ -30,8 +30,4 @@ export class PokemonDetailComponent implements OnInit {
       this.pokemon = this.data;
     }
   }
-
-  back() {
-    this.router.navigate(['../'], {relativeTo: this.route});
-  }
 }
