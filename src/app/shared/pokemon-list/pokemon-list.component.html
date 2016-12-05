@@ -1,8 +1,8 @@
 <md-grid-list [cols]="cols" rowHeight="200px">
   <md-grid-tile *ngFor="let pokemon of pokemons">
-      <app-pokemon-card [pokemon]="pokemon"
-                        [enable-preview]="previewMode"
-                        (show)="setPreviewPokemon($event)"
-      ></app-pokemon-card>
+    <app-pokemon-card [pokemon]="pokemon"
+                      [enable-preview]="previewMode"
+                      (show)="setPreviewPokemon($event)"
+    ></app-pokemon-card>
   </md-grid-tile>
 </md-grid-list>

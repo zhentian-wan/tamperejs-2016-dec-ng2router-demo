@@ -1,2 +1,6 @@
 <h3>Pokemon Live Preview</h3>
 <app-pokemon-detail [pokemon]="pokemon" #list></app-pokemon-detail>
+<div style="display: flex; justify-content: space-between; padding: 16px;">
+  <button md-button [color]="'primary'" (click)="previous()">Previous</button>
+  <button md-button [color]="'primary'" (click)="next()">Next</button>
+</div>

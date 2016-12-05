@@ -3,6 +3,9 @@
     <div>
       <i [class]="'sprite sprite-' + pokemon?.id"></i>
     </div>
+    <p class="types">
+      <span class="type" *ngFor="let type of pokemon.types">{{type}}</span>
+    </p>
     <p>
       <span>#{{pokemon?.id}}</span>
       <span>{{pokemon?.name | capitalize}}</span>
