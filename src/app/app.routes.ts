@@ -1,4 +1,4 @@
-import {RouterModule, PreloadAllModules} from "@angular/router";
+import {RouterModule, PreloadAllModules, Routes} from "@angular/router";
 import {E404Component} from "./shared/e404/e404.component";
 import {CanLoadPokemon} from "./shared/guards/CanLoad.guard";
 import {PreloadSelectedModuledsList} from "./shared/custom-preload";
@@ -7,7 +7,7 @@ import {PreloadSelectedModuledsList} from "./shared/custom-preload";
 const indexRoute = {path: '', redirectTo: 'home', pathMatch: 'full'};
 const fallbackRoute = {path: '**', component: E404Component, data: {title: 'Page not found'}};
 
-const routes = [
+const routes: Routes = [
   indexRoute,
   {
     path: 'home',

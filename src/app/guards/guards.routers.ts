@@ -1,10 +1,11 @@
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {GuardsComponent} from "./guards.component";
 import {CanActivateComponent} from "./can-activate/can-activate.component";
 import {CanDeactivatedComponent} from "./can-deactivated/can-deactivated.component";
 import ComponentCanActivate from "../shared/guards/CanActivate.guard";
 import CanComponentDeactivate from "../shared/guards/CanDeactivated.guard";
-const routers = [
+
+const routers: Routes = [
   {
     path: '', component: GuardsComponent, children: [
     {path: 'can-activate', component: CanActivateComponent, canActivate: [ComponentCanActivate]},

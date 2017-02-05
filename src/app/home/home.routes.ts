@@ -1,8 +1,8 @@
 
 import {HomeComponent} from "./home.component";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {PokemonDetailComponent} from "../shared/pokemon-detail/pokemon-detail.component";
-const routes = [
+const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: ':id', component: PokemonDetailComponent}
 ];

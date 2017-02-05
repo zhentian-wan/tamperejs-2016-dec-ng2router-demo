@@ -1,9 +1,9 @@
 
 import {ResolverComponent} from "./resolver.component";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {PokemonDataResolver} from "./pokedata.resolver";
 
-const routes = [
+const routes: Routes = [
   {path: '', component: ResolverComponent, resolve: {
     pokeData: PokemonDataResolver
   }}
